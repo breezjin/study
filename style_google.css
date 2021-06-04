@@ -1,0 +1,62 @@
+html {
+    font-family: Roboto, RobotoDraft, Arial, sans-serif;
+    font-style: normal;
+    font-variant-ligatures: normal;
+    font-variant-caps: normal;
+    font-variant-numeric: normal;
+    font-variant-east-asian: normal;
+    font-weight: normal;
+    font-stretch: normal;
+    font-size: medium;
+    line-height: 1rem;
+}
+
+header {
+    position: sticky;
+    padding: 1rem;
+    top: 0;
+}
+
+.nav {
+    height: 48px;
+}
+
+section {
+    padding: 1rem;
+}
+
+div, span {
+
+}
+
+.logo {
+    width: 272px;
+}
+
+.search {
+    padding: 20px;
+    border: gray;
+    border-radius: 0.4em;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(242,242,242);
+}
+
+.nation {
+    height: 48px;
+    border-bottom: 1.5px solid rgb(218,220,224);
+}
+
+.infos {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    height: 48px;
+}
+
+.grid-items {
+
+}
