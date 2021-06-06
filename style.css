@@ -3,13 +3,33 @@ html {
     font-size: small;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+section {
+    display: flex;
+    flex: auto;
+    flex-direction: column;
+}
+
 .notice {
     background-color: #cbcbcb;
     padding: 0.4rem 1rem;
     border-radius: 0.8rem;
 }
 
-ol {
+.list {
+    display: flex;
+    flex: auto;
     font-size: small;
+}
+
+footer {
+    color: gray;
+    padding-bottom: 4rem;
+    bottom: 0px;
 }
 
