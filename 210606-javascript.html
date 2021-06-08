@@ -6,7 +6,53 @@
     </head>
 
     <body>
-        javascript test
+        <header>
+            <h1>
+                <script type="text/javascript">
+                    document.write("javascript 작업하는 영역 입니다.");
+                </script>
+            </h1>
+            <span>
+                <script>
+                    var now = new Date();
+                    var result = "위 타이틀과 하단 시간정보 모두 javascript document.write 방식으로 호출했습니다.</br>현재시간 : " + now;
+                    document.write(result);
+                </script>
+            </span>
+        </header>
+
+        <section>
+            <ul>
+                <li>함수 호출 테스트 영역</li>
+                    <div>
+                        <script>
+                            var i = 0;
+                            function square(number) {
+                                return number * number
+                            }
+                            document.write(square(2));
+                        </script>
+                    </div>
+                <li>2개 주사위 결과값이 6으로 나오는 경우 호출</li>
+                    <div>
+                        <script>
+                            // 콘솔로그로 출력하는 방식. 예제 원본.
+                            // for (var i = 1; i <= 6; i++) {
+                            //     for (var j = 1; j <= 6; j++) {
+                            //         if (i + j === 6) console.log(`[${i}, ${j}]`);
+                            //     }
+                            // }
+                            // 실 구현.
+                            for (var i = 1; i <= 6; i++) {
+                                for (var j = 1; j <= 6; j++) {
+                                    if (i + j === 6) document.write ('['+i+', ', j+']</br>');
+                                }
+                            }
+                        </script>
+                    </div>
+            </ul>
+        </section>
+
     </body>
 
 </html>
