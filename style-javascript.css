@@ -1,0 +1,23 @@
+html {
+    font-family: Roboto, RobotoDraft, Arial, sans-serif;
+    font-style: normal;
+    font-variant-ligatures: normal;
+    font-variant-caps: normal;
+    font-variant-numeric: normal;
+    font-variant-east-asian: normal;
+    font-weight: normal;
+    font-stretch: normal;
+    font-size: medium;
+    line-height: 1.5rem;
+}
+
+header {
+    width: 100vw;
+}
+
+.description {
+    display: flex;
+    background-color: rgb(198, 198, 198);
+    padding: 1rem;
+    border-radius: 0.4rem;
+}
