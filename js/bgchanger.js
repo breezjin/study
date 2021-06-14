@@ -16,20 +16,26 @@ changeColor();
 // 이것을 body 스타일과 h1 문구에 박아 넣는다.
 
 function makeRandomText(event) {
-    let randomText = source.charAt(Math.floor(Math.random() * source.length));
-    return randomText;
+  let randomText = source.charAt(Math.floor(Math.random() * source.length));
+  return randomText;
 }
 
 function changeColor(event) {
-    const realText = " #" + makeRandomText() + makeRandomText() + makeRandomText() + makeRandomText() + makeRandomText() + makeRandomText();
-    console.log(typeof(realText)); // 이 부분은 콘솔에서 검증하기 위한 영역.
-    body.style.backgroundColor = realText;
-    hexColor.innerText = realText;
+  const realText =
+    "#" +
+    makeRandomText() +
+    makeRandomText() +
+    makeRandomText() +
+    makeRandomText() +
+    makeRandomText() +
+    makeRandomText();
+  console.log(typeof realText); // 이 부분은 콘솔에서 검증하기 위한 영역.
+  body.style.backgroundColor = realText;
+  hexColor.innerText = realText;
 }
 
 // 이 부분은 콘솔에서 검증하기 위한 영역.
 console.dir(body);
 console.log(changeColor);
 
-
-btn.addEventListener("click", changeColor)
+btn.addEventListener("click", changeColor);
