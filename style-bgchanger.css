@@ -1,0 +1,33 @@
+html {
+    width: 100vw;
+    height: 100vh;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#color-info {
+    display: flex;
+    flex-direction: row;
+}
+
+button {
+    width: 10rem;
+    height: 3.6rem;
+    background-color: gray;
+    border: none;
+    border-radius: 0.4rem;
+    font-size: x-large;
+    color: white;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+}
+
+button:hover {
+    font-size: xx-large;
+}
