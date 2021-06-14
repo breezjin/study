@@ -31,3 +31,7 @@ button {
 button:hover {
     font-size: xx-large;
 }
+
+button:active {
+    border: 0.1rem solid aqua;
+}
