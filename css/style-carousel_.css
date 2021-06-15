@@ -1,4 +1,10 @@
 body {
+  /* 여기서부터는 내가 추가한 코드 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* 여기서부터는 원래 있던 코드 */
   background-image: url("../images/bg.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -9,4 +15,65 @@ h1 {
   font-family: "Pacifico", cursive;
   text-align: center;
   font-size: 72px;
+}
+
+#carousel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+#content {
+  display: flex;
+  flex-direction: row;
+  width: fit-content;
+}
+
+.area-img {
+  display: flex;
+  width: fit-content;
+  height: fit-content;
+}
+
+#img {
+  width: fit-content;
+  height: fit-content;
+}
+
+.area-arrow {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  height: auto;
+  padding: 1rem;
+}
+
+.img-btn {
+  width: 3rem;
+  height: 3rem;
+}
+
+.img-btn:hover {
+  filter: drop-shadow(2px 2px 2px #222);
+}
+
+#index-dots {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.dot {
+  width: 0.6rem;
+  height: 0.6rem;
+  background-color: gray;
+  border-radius: 1rem;
+  margin: 0.6rem;
+  margin-bottom: 10rem;
+}
+
+.selected {
+  background-color: black;
 }
