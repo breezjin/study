@@ -11,7 +11,7 @@
       href="https://fonts.googleapis.com/css?family=Varela+Round&display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" href="/images/favicon.ico" />
+    <link rel="icon" href="images/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="css/calendar-style.css" />
     <title>Calendar Project</title>
   </head>
@@ -19,12 +19,71 @@
   <body>
     <section>
       <div class="image-box">
-        <img src="images/vanilla_coding_logo.png" />
+        <img id="logo" src="images/vanilla_coding_logo.png" />
       </div>
-      <h1>Calendar</h1>
+      <div class="title">
+        <h1>Calendar</h1>
+      </div>
 
       <!-- 달력 Start -->
-
+      <div class="area" id="area-day-of-week">
+        <h2 id="date"></h2>
+        <h2 id="day-of-week"></h2>
+      </div>
+      <!-- <div class="area" id="area-date">
+      </div> -->
+      <div class="area" id="area-month-year">
+        <h3 id="month"></h3>
+        <h3 id="year"></h3>
+      </div>
+      <div class="area" id="area-calendar">
+        <div class="btn" id="btn-left">
+          <img src="images/arrow-left-circle.svg" />
+        </div>
+        <div class="table" id="calendar">
+          <div class="cell" id="SUN">SUN</div>
+          <div class="cell" id="MON">MON</div>
+          <div class="cell" id="TUE">TUE</div>
+          <div class="cell" id="WED">WED</div>
+          <div class="cell" id="THU">THU</div>
+          <div class="cell" id="FRI">FRI</div>
+          <div class="cell" id="SAT">SAT</div>
+          <div class="cell" id="1">1</div>
+          <div class="cell" id="1">1</div>
+          <div class="cell" id="1">1</div>
+          <div class="cell" id="1">1</div>
+          <div class="cell" id="1">1</div>
+          <div class="cell" id="1">1</div>
+          <div class="cell" id="1">1</div>
+          <div class="cell" id="1">1</div>
+          <div class="cell" id="1">1</div>
+          <div class="cell" id="1">1</div>
+          <div class="cell" id="1">1</div>
+          <div class="cell" id="1">1</div>
+          <div class="cell" id="1">1</div>
+          <div class="cell" id="1">1</div>
+          <div class="cell" id="1">1</div>
+          <div class="cell" id="1">1</div>
+          <div class="cell" id="1">1</div>
+          <div class="cell" id="1">1</div>
+          <div class="cell" id="1">1</div>
+          <div class="cell" id="1">1</div>
+          <div class="cell" id="1">1</div>
+          <div class="cell" id="1">1</div>
+          <div class="cell" id="1">1</div>
+          <div class="cell" id="1">1</div>
+          <div class="cell" id="1">1</div>
+          <div class="cell" id="1">1</div>
+          <div class="cell" id="1">1</div>
+          <div class="cell" id="1">1</div>
+          <div class="cell" id="1">1</div>
+          <div class="cell" id="1">1</div>
+          <div class="cell" id="1">1</div>
+        </div>
+        <div class="btn" id="btn-right">
+          <img src="images/arrow-right-circle.svg" />
+        </div>
+      </div>
       <!-- 달력 End -->
     </section>
 
