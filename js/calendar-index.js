@@ -16,39 +16,35 @@ const dayArea = document.querySelector("#day-of-week");
 const dateArea = document.querySelector("#date");
 const monthArea = document.querySelector("#month");
 const yearArea = document.querySelector("#year");
-const dateNumber = document.querySelector("td");
+const dateNumber = document.querySelector("tbody");
 
 const months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
 const days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
 let dayNumbers = [];
 
 let year = newDate.getFullYear(); //Get the year as a four digit number (yyyy)
-let month = newDate.getMonth() + 1; //Get the month as a number (0-11)
+let month = newDate.getMonth(); //Get the month as a number (0-11)
 let date = newDate.getDate(); //Get the day as a number (1-31)
 let day = newDate.getDay(); //Get the weekday as a number (0-6)
 
-// 오늘의 현재 날짜 표기
-dateArea.innerHTML = date + "일&nbsp;";
-// 오늘의 현재 요일 표기
-dayArea.innerHTML = "(" + days[day] + ")";
-// 오늘의 현재 월 표기
-monthArea.innerHTML = months[month] + "&nbsp;&nbsp;";
-// 오늘의 현재 연도 표기
-yearArea.innerHTML = year;
+function paintDays() {
+    dateArea.innerHTML = date + "일&nbsp;"; //오늘의 현재 날짜 표기
+    dayArea.innerHTML = "(" + days[day] + ")"; //오늘의 현재 요일 표기
+    monthArea.innerHTML = months[month] + "&nbsp;&nbsp;"; //오늘의 현재 월 표기
+    yearArea.innerHTML = year; //오늘의 현재 연도 표기
+};
 
-getFirstDay();
+paintDays();
 
-// 현재 월의 1일이 무슨 요일인지 판별하고, 해당 요일 라벨링에 1일 표기하기
-function getFirstDay() {
-    let firstDay = new Date(year, month, 1).getDay();
-    if (days[firstDay] === dateNumber.className) {
-        dateNumber.innerHTML = 1;
-        console.log(`첫째날 입력완료`);
+//이번달 전체 날짜를 생성해서 dayNumbers array에 push하기
+function makeDaysOfThisMonth() {
+    for (let i = 1; i <= 31; i++) {
+        let makeDays = new Date(year, month, i);
+        dayNumbers.push(makeDays);
     }
-}
+};
 
-//이번달 날짜를 json으로 변환해서 array로 push하기
-for (let i = 1; i <= 31; i++) {
-    let makeDays = Date(year, month, i);
-    dayNumbers.push(makeDays.toJSON());
-}
+makeDaysOfThisMonth();
+
+//현재 월의 1일이 무슨 요일인지 판별하고, 해당 요일 라벨링에 1일 표기하기
+dayNumbers.map
