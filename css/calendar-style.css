@@ -67,6 +67,7 @@ h1 {
 
 .btn:hover {
   filter: drop-shadow(2px 2px 2px #222);
+  cursor: pointer;
 }
 
 #calendar {
@@ -85,4 +86,9 @@ h1 {
   width: 2rem;
   text-align: center;
   margin: 0.4rem;
+}
+
+.cell:hover {
+  color: gray;
+  cursor: pointer;
 }
