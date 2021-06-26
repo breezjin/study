@@ -58,7 +58,7 @@ function paintDates() {
     console.log("dateObj :", dateObj, "firstDate :", months[month], "/", firstDate, "(", days[firstDateDay], ")", "lastDate :", lastDate); //첫째날의 요일과 이번달의 마지막일
 
     //날짜 1~(30 혹은 31) 관리
-    for (let i = 0; i <= lastDate; i++) { //첫째날~마지막날까지 쭉 돌면서
+    for (let i = 0; i < lastDate; i++) { //첫째날~마지막날까지 쭉 돌면서
         dateNumberArea[firstDateDay + i].addEventListener("click", changeDate);
         dateNumberArea[firstDateDay + i].innerHTML = i+1; //해당요일 배열부터 날짜를 입력해주고
 
@@ -87,7 +87,7 @@ function moveToNextMonth() {
     let month = dateObj.getMonth();
     dateObj.setMonth(month+1);
     dateObj.setDate(1);
-    for (let i = 0; i < 35; i++) { //첫째날~마지막날까지 쭉 돌면서
+    for (let i = 0; i < 42; i++) { //첫째날~마지막날까지 쭉 돌면서
         dateNumberArea[i].innerHTML = "&nbsp;"; //공란을 채워서 초기화 해주고
         dateNumberArea[i].style.cssText = 'background-color: none; font-weight: nomal; color: black;';
     }
@@ -99,7 +99,7 @@ function moveToLastMonth() {
     let month = dateObj.getMonth();
     dateObj.setMonth(month-1);
     dateObj.setDate(1);
-    for (let i = 0; i < 35; i++) { //첫째날~마지막날까지 쭉 돌면서
+    for (let i = 0; i < 42; i++) { //첫째날~마지막날까지 쭉 돌면서
         dateNumberArea[i].innerHTML = "&nbsp;"; //공란을 채워서 초기화 해주고
         dateNumberArea[i].style.cssText = 'background-color: none; font-weight: nomal; color: black;';
     }
