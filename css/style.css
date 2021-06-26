@@ -27,6 +27,11 @@ section {
     font-size: small;
 }
 
+.prj {
+    font-weight: bold;
+    color: blue;
+}
+
 footer {
     color: gray;
     padding-bottom: 4rem;
