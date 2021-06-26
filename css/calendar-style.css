@@ -37,6 +37,12 @@ section {
   width: 100%;
 }
 
+#made-by {
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+}
+
 h1 {
   font-family: "Pacifico", cursive;
   text-align: center;
