@@ -23,10 +23,6 @@ const days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
 // 일,월,화,수,목,금,토 요일 라벨링 표기 > done
 
 let dateObj = new Date();
-let year = dateObj.getFullYear();
-let month = dateObj.getMonth();
-let date = dateObj.getDate();
-let day = dateObj.getDay();
 
 function paintInfo() {
     let year = dateObj.getFullYear();
