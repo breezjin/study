@@ -1,8 +1,5 @@
 console.log("hello, vanilla.");
 
-// 참고 https://vanilla-coding-calendar.netlify.app/
-//Tue Jun 22 2021 10:03:03 GMT+0900 (대한민국 표준시)
-
 const dayArea = document.querySelector("#day");
 const dateArea = document.querySelector("#date");
 const monthArea = document.querySelector("#month");
@@ -30,47 +27,47 @@ let year = dateObj.getFullYear();
 let month = dateObj.getMonth();
 let date = dateObj.getDate();
 let day = dateObj.getDay();
-console.log(dateObj); //검증용
 
 function paintInfo() {
-	dateArea.innerHTML = dateObj.getDate() + "일&nbsp;"; //as a number (1-31)
-	dayArea.innerHTML = "(" + days[dateObj.getDay()] + ")"; //as a number (0-6)
-	monthArea.innerHTML = months[dateObj.getMonth()] + "&nbsp;&nbsp;"; //as a number (0-11)
-	yearArea.innerHTML = dateObj.getFullYear(); //as a four digit number (yyyy)
+    let year = dateObj.getFullYear();
+    let month = dateObj.getMonth();
+    let date = dateObj.getDate();
+    let day = dateObj.getDay();
+
+	dateArea.innerHTML = date + "일&nbsp;"; //as a number (1-31)
+	dayArea.innerHTML = "(" + days[day] + ")"; //as a number (0-6)
+	monthArea.innerHTML = months[month] + "&nbsp;&nbsp;"; //as a number (0-11)
+	yearArea.innerHTML = year; //as a four digit number (yyyy)
 }
 paintInfo();
 
 const dateNumberArea = document.querySelectorAll(".cell");
-const dateNumberAreaSUN = document.querySelectorAll(".SUN");
-const dateNumberAreaMON = document.querySelectorAll(".MON");
-const dateNumberAreaTUE = document.querySelectorAll(".TUE");
-const dateNumberAreaWED = document.querySelectorAll(".WED");
-const dateNumberAreaTHU = document.querySelectorAll(".THU");
-const dateNumberAreaFRI = document.querySelectorAll(".FRI");
-const dateNumberAreaSAT = document.querySelectorAll(".SAT");
-console.log(dateNumberArea); //검증용
 
 // 현재 월의 1일이 무슨 요일인지 판별하고, 해당 요일 라벨링에 1일 표기하기
-let firstDate = new Date(year, month, 1); //월의 첫째날 정의
-// let firstDateDay = firstDate.getDay(); //첫째날의 요일
-let firstDateDay = new Date(year, month, 1).getDay(); //첫째날의 요일
-let lastDate = new Date(year, month+1, 0).getDate(); //월의 마지막날 정의
 // dateNumberArea[firstDateDay].innerHTML = firstDate.getDate(); //날짜영역에 요일에 맞는 배열로 1일 입력
 
 function paintDates() {
-    for (let j = 0; j <= lastDate + 1 ; j++) { //날짜영역 마다 이벤트리스너 생성
-        dateNumberArea[j].addEventListener("click", changeDate);
-    }
+    let year = dateObj.getFullYear();
+    let month = dateObj.getMonth();
+    let date = dateObj.getDate();
 
-    for (let i = 1; i <= lastDate; i++) { //첫째날~마지막날까지 쭉 돌면서
-        dateNumberArea[firstDateDay + i - 1].innerHTML = i; //날짜를 입력해주고
-        if (i === dateObj.getDate()) { //선택한 날짜면 별도 표기
-            dateNumberArea[firstDateDay + i - 1].style.cssText = 'background-color: black; font-weight: bold; color: white;';
+    let firstDate = new Date(year, month, 1).getDate(); //월의 마지막날 정의: 다음달 0일
+    let lastDate = new Date(year, month+1, 0).getDate(); //월의 마지막날 정의: 다음달 0일
+    let firstDateDay = new Date(year, month, 1).getDay(); //첫째날의 요일
+
+    console.log("dateObj :", dateObj, "firstDate :", months[month], "/", firstDate, "(", days[firstDateDay], ")", "lastDate :", lastDate); //첫째날의 요일과 이번달의 마지막일
+
+    //날짜 1~(30 혹은 31) 관리
+    for (let i = 0; i <= lastDate; i++) { //첫째날~마지막날까지 쭉 돌면서
+        dateNumberArea[firstDateDay + i].addEventListener("click", changeDate);
+        dateNumberArea[firstDateDay + i].innerHTML = i+1; //해당요일 배열부터 날짜를 입력해주고
+
+        if (i+1 === date) { //선택한 날짜면 별도 표기
+            dateNumberArea[firstDateDay + i].style.cssText = 'background-color: black; font-weight: bold; color: white;';
         } else { //선택하지 않은 날짜면 일반 표기
-            dateNumberArea[firstDateDay + i - 1].style.cssText = 'background-color: none; font-weight: nomal; color: black;';
+            dateNumberArea[firstDateDay + i].style.cssText = 'background-color: none; font-weight: nomal; color: black;';
         }
     }
-    return dateObj;
 }
 paintDates();
 
@@ -87,24 +84,27 @@ const btnLeft = document.querySelector("#btn-left");
 const btnRight = document.querySelector("#btn-right");
 
 function moveToNextMonth() {
-    dateObj.setMonth(month + 1);
+    let month = dateObj.getMonth();
+    dateObj.setMonth(month+1);
     dateObj.setDate(1);
-
-    for (let i = 0; i <= 34; i++) { //첫째날~마지막날까지 쭉 돌면서
-        dateNumberArea[i].innerHTML = "&nbsp;"; //날짜를 입력해주고
+    for (let i = 0; i < 35; i++) { //첫째날~마지막날까지 쭉 돌면서
+        dateNumberArea[i].innerHTML = "&nbsp;"; //공란을 채워서 초기화 해주고
+        dateNumberArea[i].style.cssText = 'background-color: none; font-weight: nomal; color: black;';
     }
-
-    paintDates();
     paintInfo();
-    console.log("다음달로 이동 후 1일 표기"); // 우측 화살표를 클릭 했을때, 다음 달의 요일 및 날짜 표기
-    return dateObj
+    paintDates();
 }
 
 function moveToLastMonth() {
-	dateObj.setDate(dateObj.getFullYear(), dateObj.getMonth() - 1, 1);
+    let month = dateObj.getMonth();
+    dateObj.setMonth(month-1);
+    dateObj.setDate(1);
+    for (let i = 0; i < 35; i++) { //첫째날~마지막날까지 쭉 돌면서
+        dateNumberArea[i].innerHTML = "&nbsp;"; //공란을 채워서 초기화 해주고
+        dateNumberArea[i].style.cssText = 'background-color: none; font-weight: nomal; color: black;';
+    }
     paintInfo();
     paintDates();
-    console.log("이전달로 이동 후 1일 표기"); // 좌측 화살표를 클릭 했을때, 이전 달의 요일 및 날짜 표기
 }
 
 btnRight.addEventListener("click", moveToNextMonth);
