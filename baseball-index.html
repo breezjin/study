@@ -17,7 +17,7 @@
   </head>
 
   <body>
-    <section>
+    <header>
       <div class="image-box">
         <img id="logo" src="images/vanilla_coding_logo.png" />
       </div>
@@ -27,15 +27,81 @@
       <div id="made-by">
         <span>made by breezjin.</span>
       </div>
+    </header>
 
-      <!-- 게임 Start -->
-      <div class="area-btn">
-        <form>
-          <input type="button" id="btn-start" value="Game Start" />
+    <section>
+      <!-- 게임 Start 시작 -->
+      <div class="column start">
+        <div class="row">
+          <img id="img-letsgame" src="images/letsgamestart.jpg" />
+        </div>
+        <div class="row">
+          <button id="btn-start">Game Start</button>
+        </div>
+      </div>
+      <!-- 게임 Start 끝 -->
+      <!-- 게임 Game 시작 -->
+      <div class="column game hidden">
+        <div class="column description">
+          <span>자 그럼 이제 <b><u>3개 숫자</u></b>를맞춰볼까요?</br>숫자와 위치까지 맞으면 스트라이크! 숫자만 맞으면 볼~</span>
+        </div>
+        <div class="column input">
+          <form class="row" onsubmit="return false">
+            <input type="text" id="input-numbers" placeholder="3개 숫자 입력하기" />
+            <button id="btn-enter">입력값 확인</button>
+          </form>
+          <div class="validation hidden" id="validation">
+            (예시)3자리 숫자를 입력해주세요.
+          </div>
+        </div>
+        <div class="row result hidden" id="result-01">
+          <div class="row number try">
+            <h3>시도 #</h3><h3>10</h3>
+          </div>
+          <div class="column number hidden" id="r01-n01">
+            <h1>1</h1>
+          </div>
+          <div class="column number hidden" id="r01-n02">
+            <h1>1</h1>
+          </div>
+          <div class="column number hidden" id="r01-n03">
+            <h1>1</h1>
+          </div>
+          <div class="column number check">
+            <div class="row" id="strike">
+              <h4>S</h4>
+              <div class="strike-dot"></div>
+              <div class="strike-dot"></div>
+              <div class="strike-dot"></div>
+            </div>
+            <div class="row" id="ball">
+              <h4>B</h4>
+              <div class="ball-dot"></div>
+              <div class="ball-dot"></div>
+              <div class="ball-dot"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 게임 Game 끝 -->
+      <!-- 게임 End 시작 -->
+      <div class="column end hidden">
+        <div class="column success hidden">
+          <h1>축하합니다! 정답입니다!!</h1>
+          <div>
+            <h3>정답 : </h3><h3 id="answer"></h3>
+          </div>
+        </div>
+        <div class="column fail hidden"></div>
+          <h1>아쉽네요ㅠ 실패했습니다.</h1>
+          <div>
+            <h3>게임을 다시 시작해볼까요?</h3>
+          </div>
+        <form class="row">
+          <input type="button" id="btn-restart" value="다시 시도하기" />
         </form>
       </div>
-      <!-- 게임 End -->
-
+      <!-- 게임 End 끝 -->
     </section>
 
     <script src="js/baseball-index.js"></script>
