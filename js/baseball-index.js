@@ -5,7 +5,18 @@ console.log("hello, vanilla.");
 
 const btnStart = document.querySelector('#btn-start');
 let answer = [];
-let userTry = [];
+let userTry01 = [];
+let userTry02 = [];
+let userTry03 = [];
+let userTry04 = [];
+let userTry05 = [];
+let userTry06 = [];
+let userTry07 = [];
+let userTry08 = [];
+let userTry09 = [];
+let userTry10 = [];
+let userTryList = [userTry01, userTry02, userTry03, userTry04, userTry05, userTry06, userTry07, userTry08, userTry09, userTry10];
+let beforeTryNumer = 0;
 
 function makeRandomNumber () {
     let randomNumber = Math.floor(Math.random() * 1000);
@@ -27,21 +38,36 @@ const input = document.querySelector('#input-numbers');
 const btnCheck = document.querySelector('#btn-enter');
 const validation = document.querySelector('#validation');
 
+const result = document.querySelectorAll('.result');
+const userTryArea = document.querySelectorAll('.n');
+
+const tryNumberArea = document.querySelector('#try-number');
+const strikeDot = document.querySelector('#strike-dot');
+const ballDot = document.querySelector('#ball-dot');
+
 function checkAnswer () {
     let inputNumbers = input.value;
     userTry.splice(0, userTry.length);
     console.log('사용자가 입력한 값 : ' + inputNumbers); //검증용
 
-    for (let i = 0; i < 3; i++) {
+    if (inputNumbers.length !== 3) {
+        alert('3자리 숫자를 입력해주세요.');
+        return;
+    }
+
+    for (let i = 0; i < inputNumbers.length; i++) {
         let digit2 = inputNumbers.charAt(i);
         userTry.push(Number(digit2));
+        userTryArea[i].innerHTML = userTry[i];
     }
     console.log('입력한 숫자를 userTry(arr)로 : ' + userTry); //검증용
-    inputNumbers = "";
 
-    if (userTry.length !== 3) {
-        validation.classList.remove('hidden');
-    }
+    beforeTryNumer = beforeTryNumer + 1;
+    tryNumberArea.innerHTML = beforeTryNumer;
+
+    userTryList.push(userTry);
+    console.log('userTryList(arr) 결과값 : '); //검증용
+    console.log(userTryList); //검증용
 };
 
 btnCheck.addEventListener('click', checkAnswer);
@@ -51,7 +77,6 @@ input.addEventListener('keyup', function (e) {
         btnCheck.click();
     }
 });
-
 
 
 // 5. 사용자가 엔터키를 클릭 했을때, 2단계에서 생성한 숫자와 사용자의 입력값 비교하기

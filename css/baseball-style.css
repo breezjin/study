@@ -46,7 +46,7 @@ h1 {
   font-family: "Pacifico", cursive;
   text-align: center;
   font-size: 48px;
-  margin: auto;
+  margin: 0rem;
 }
 
 #made-by {
@@ -91,37 +91,38 @@ h1 {
 }
 
 #input-numbers {
-  width: 100%;
   font-size: 2rem;
+  text-align: center;
   border: unset;
   padding: 0.4rem;
   margin: 0.4rem 0rem 0.2rem 0rem;
   /* filter: drop-shadow(2px 2px 2px #222); */
 }
 
-input::placeholder {
+#input-numbers::placeholder {
   text-align: center;
   color: rgb(158, 158, 158);
 }
 
-button {
-  width: 20rem;
-}
-
-.validation {
-  font-size: 0.8rem;
-}
-
 .result {
-  flex-grow: inherit;
+  background-color: rgb(170, 170, 170);
+  padding: 1rem;
+  border-radius: 1rem;
 }
 
 .number {
-  width: 20%;
+  background-color: whitesmoke;
+  border-radius: 1rem;
+  width: 16%;
+  margin: 0rem 1rem 0rem 1rem;
 }
 
 #strike, #ball {
-  height:fit-content ;
+  height: 2rem ;
+}
+
+.check {
+  margin-left: 1rem;
 }
 
 .strike-dot, .ball-dot {
