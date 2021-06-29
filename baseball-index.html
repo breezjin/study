@@ -31,7 +31,7 @@
 
     <section>
       <!-- 게임 Start 시작 -->
-      <div class="column start">
+      <div class="column start" id="start">
         <div class="row">
           <img id="img-letsgame" src="images/letsgamestart.jpg" />
         </div>
@@ -41,12 +41,12 @@
       </div>
       <!-- 게임 Start 끝 -->
       <!-- 게임 Game 시작 -->
-      <div class="column game hidden">
+      <div class="column game hidden" id="game">
         <div class="column description">
           <span>자 그럼 이제 <b><u>3개 숫자</u></b>를맞춰볼까요?</br>숫자와 위치까지 맞으면 스트라이크! 숫자만 맞으면 볼~</span>
         </div>
         <div class="row">
-          <div class="column input">
+          <div class="row input">
             <form class="row" onsubmit="return false">
               <input type="text" id="input-numbers" placeholder="3개 숫자 입력하기" />
             </form>
@@ -54,50 +54,312 @@
           <div class="row">
             <button id="btn-enter">입력값 확인</button>
           </div>
+          <div class="column hidden" id="try-number-area">
+            <div class="row">
+              <span class="row tryspan">시도횟수 :&nbsp;</span>
+              <span class="row tryspan" id="try-number"></span>
+            </div>
+            <div class="row">
+              <span class="tryspan">(10번 틀리면 실패)</span>
+            </div>
+          </div>
         </div>
         <div class="row result hidden">
           <div class="row">
-            <h3 id="try-number">0</h3><h3>번째 시도</h3>
+            <h3 id="try-number">10</h3><h3>번째 시도</h3>
           </div>
           <div class="column number">
-            <h1 class="n">0</h1>
+            <h2 class="n row">0</h1>
           </div>
           <div class="column number">
-            <h1 class="n">0</h1>
+            <h2 class="n row">0</h1>
           </div>
           <div class="column number">
-            <h1 class="n">0</h1>
+            <h2 class="n row">0</h1>
           </div>
           <div class="column check">
             <div class="row" id="strike">
               <h4>S</h4>
-              <div class="strike-dot"></div>
-              <div class="strike-dot"></div>
-              <div class="strike-dot"></div>
+              <div class="strike-dot hidden"></div>
+              <div class="strike-dot hidden"></div>
+              <div class="strike-dot hidden"></div>
             </div>
             <div class="row" id="ball">
               <h4>B</h4>
-              <div class="ball-dot"></div>
-              <div class="ball-dot"></div>
-              <div class="ball-dot"></div>
+              <div class="ball-dot hidden"></div>
+              <div class="ball-dot hidden"></div>
+              <div class="ball-dot hidden"></div>
+            </div>
+          </div>
+        </div>
+        <div class="row result hidden">
+          <div class="row">
+            <h3 id="try-number">9</h3><h3>번째 시도</h3>
+          </div>
+          <div class="column number">
+            <h2 class="n row">0</h1>
+          </div>
+          <div class="column number">
+            <h2 class="n row">0</h1>
+          </div>
+          <div class="column number">
+            <h2 class="n row">0</h1>
+          </div>
+          <div class="column check">
+            <div class="row" id="strike">
+              <h4>S</h4>
+              <div class="strike-dot hidden"></div>
+              <div class="strike-dot hidden"></div>
+              <div class="strike-dot hidden"></div>
+            </div>
+            <div class="row" id="ball">
+              <h4>B</h4>
+              <div class="ball-dot hidden"></div>
+              <div class="ball-dot hidden"></div>
+              <div class="ball-dot hidden"></div>
+            </div>
+          </div>
+        </div>
+        <div class="row result hidden">
+          <div class="row">
+            <h3 id="try-number">8</h3><h3>번째 시도</h3>
+          </div>
+          <div class="column number">
+            <h2 class="n row">0</h1>
+          </div>
+          <div class="column number">
+            <h2 class="n row">0</h1>
+          </div>
+          <div class="column number">
+            <h2 class="n row">0</h1>
+          </div>
+          <div class="column check">
+            <div class="row" id="strike">
+              <h4>S</h4>
+              <div class="strike-dot hidden"></div>
+              <div class="strike-dot hidden"></div>
+              <div class="strike-dot hidden"></div>
+            </div>
+            <div class="row" id="ball">
+              <h4>B</h4>
+              <div class="ball-dot hidden"></div>
+              <div class="ball-dot hidden"></div>
+              <div class="ball-dot hidden"></div>
+            </div>
+          </div>
+        </div>
+        <div class="row result hidden">
+          <div class="row">
+            <h3 id="try-number">7</h3><h3>번째 시도</h3>
+          </div>
+          <div class="column number">
+            <h2 class="n row">0</h1>
+          </div>
+          <div class="column number">
+            <h2 class="n row">0</h1>
+          </div>
+          <div class="column number">
+            <h2 class="n row">0</h1>
+          </div>
+          <div class="column check">
+            <div class="row" id="strike">
+              <h4>S</h4>
+              <div class="strike-dot hidden"></div>
+              <div class="strike-dot hidden"></div>
+              <div class="strike-dot hidden"></div>
+            </div>
+            <div class="row" id="ball">
+              <h4>B</h4>
+              <div class="ball-dot hidden"></div>
+              <div class="ball-dot hidden"></div>
+              <div class="ball-dot hidden"></div>
+            </div>
+          </div>
+        </div>
+        <div class="row result hidden">
+          <div class="row">
+            <h3 id="try-number">6</h3><h3>번째 시도</h3>
+          </div>
+          <div class="column number">
+            <h2 class="n row">0</h1>
+          </div>
+          <div class="column number">
+            <h2 class="n row">0</h1>
+          </div>
+          <div class="column number">
+            <h2 class="n row">0</h1>
+          </div>
+          <div class="column check">
+            <div class="row" id="strike">
+              <h4>S</h4>
+              <div class="strike-dot hidden"></div>
+              <div class="strike-dot hidden"></div>
+              <div class="strike-dot hidden"></div>
+            </div>
+            <div class="row" id="ball">
+              <h4>B</h4>
+              <div class="ball-dot hidden"></div>
+              <div class="ball-dot hidden"></div>
+              <div class="ball-dot hidden"></div>
+            </div>
+          </div>
+        </div>
+        <div class="row result hidden">
+          <div class="row">
+            <h3 id="try-number">5</h3><h3>번째 시도</h3>
+          </div>
+          <div class="column number">
+            <h2 class="n row">0</h1>
+          </div>
+          <div class="column number">
+            <h2 class="n row">0</h1>
+          </div>
+          <div class="column number">
+            <h2 class="n row">0</h1>
+          </div>
+          <div class="column check">
+            <div class="row" id="strike">
+              <h4>S</h4>
+              <div class="strike-dot hidden"></div>
+              <div class="strike-dot hidden"></div>
+              <div class="strike-dot hidden"></div>
+            </div>
+            <div class="row" id="ball">
+              <h4>B</h4>
+              <div class="ball-dot hidden"></div>
+              <div class="ball-dot hidden"></div>
+              <div class="ball-dot hidden"></div>
+            </div>
+          </div>
+        </div>
+        <div class="row result hidden">
+          <div class="row">
+            <h3 id="try-number">4</h3><h3>번째 시도</h3>
+          </div>
+          <div class="column number">
+            <h2 class="n row">0</h1>
+          </div>
+          <div class="column number">
+            <h2 class="n row">0</h1>
+          </div>
+          <div class="column number">
+            <h2 class="n row">0</h1>
+          </div>
+          <div class="column check">
+            <div class="row" id="strike">
+              <h4>S</h4>
+              <div class="strike-dot hidden"></div>
+              <div class="strike-dot hidden"></div>
+              <div class="strike-dot hidden"></div>
+            </div>
+            <div class="row" id="ball">
+              <h4>B</h4>
+              <div class="ball-dot hidden"></div>
+              <div class="ball-dot hidden"></div>
+              <div class="ball-dot hidden"></div>
+            </div>
+          </div>
+        </div>
+        <div class="row result hidden">
+          <div class="row">
+            <h3 id="try-number">3</h3><h3>번째 시도</h3>
+          </div>
+          <div class="column number">
+            <h2 class="n row">0</h1>
+          </div>
+          <div class="column number">
+            <h2 class="n row">0</h1>
+          </div>
+          <div class="column number">
+            <h2 class="n row">0</h1>
+          </div>
+          <div class="column check">
+            <div class="row" id="strike">
+              <h4>S</h4>
+              <div class="strike-dot hidden"></div>
+              <div class="strike-dot hidden"></div>
+              <div class="strike-dot hidden"></div>
+            </div>
+            <div class="row" id="ball">
+              <h4>B</h4>
+              <div class="ball-dot hidden"></div>
+              <div class="ball-dot hidden"></div>
+              <div class="ball-dot hidden"></div>
+            </div>
+          </div>
+        </div>
+        <div class="row result hidden">
+          <div class="row">
+            <h3 id="try-number">2</h3><h3>번째 시도</h3>
+          </div>
+          <div class="column number">
+            <h2 class="n row">0</h1>
+          </div>
+          <div class="column number">
+            <h2 class="n row">0</h1>
+          </div>
+          <div class="column number">
+            <h2 class="n row">0</h1>
+          </div>
+          <div class="column check">
+            <div class="row" id="strike">
+              <h4>S</h4>
+              <div class="strike-dot hidden"></div>
+              <div class="strike-dot hidden"></div>
+              <div class="strike-dot hidden"></div>
+            </div>
+            <div class="row" id="ball">
+              <h4>B</h4>
+              <div class="ball-dot hidden"></div>
+              <div class="ball-dot hidden"></div>
+              <div class="ball-dot hidden"></div>
+            </div>
+          </div>
+        </div>
+        <div class="row result hidden">
+          <div class="row">
+            <h3 id="try-number">1</h3><h3>번째 시도</h3>
+          </div>
+          <div class="column number">
+            <h2 class="n row">0</h1>
+          </div>
+          <div class="column number">
+            <h2 class="n row">0</h1>
+          </div>
+          <div class="column number">
+            <h2 class="n row">0</h1>
+          </div>
+          <div class="column check">
+            <div class="row" id="strike">
+              <h4>S</h4>
+              <div class="strike-dot hidden"></div>
+              <div class="strike-dot hidden"></div>
+              <div class="strike-dot hidden"></div>
+            </div>
+            <div class="row" id="ball">
+              <h4>B</h4>
+              <div class="ball-dot hidden"></div>
+              <div class="ball-dot hidden"></div>
+              <div class="ball-dot hidden"></div>
             </div>
           </div>
         </div>
       </div>
       <!-- 게임 Game 끝 -->
       <!-- 게임 End 시작 -->
-      <div class="column end hidden">
-        <div class="column success hidden">
-          <h1>축하합니다! 정답입니다!!</h1>
-          <div>
-            <h3>정답 : </h3><h3 id="answer"></h3>
+      <div class="column end hidden" id="end">
+        <div class="column success hidden" id="success">
+          <h1>🎉 축하합니다! 정답입니다!!</h1>
+          <div class="row">
+            <h3>정답 : &nbsp;</h3><h3 id="answer"></h3>
           </div>
         </div>
-        <div class="column fail hidden"></div>
-          <h1>아쉽네요ㅠ 실패했습니다.</h1>
-          <div>
-            <h3>게임을 다시 시작해볼까요?</h3>
+        <div class="column fail hidden" id="fail">
+          <h1>😢 아쉽네요~ 😵 실패했습니다.</h1>
+          <div class="row">
+            <h3>다시 시도해보시겠어요?</h3>
           </div>
+        </div>
         <div class="row">
           <button id="btn-restart">다시 시도하기</button> 
         </div>

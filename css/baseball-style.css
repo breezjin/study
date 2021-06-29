@@ -49,6 +49,10 @@ h1 {
   margin: 0rem;
 }
 
+h3 {
+  text-align: center;
+}
+
 #made-by {
   display: flex;
   justify-content: center;
@@ -56,7 +60,7 @@ h1 {
 }
 
 #img-letsgame {
-  width: 10rem;
+  width: 12.6rem;
 }
 
 .row {
@@ -104,24 +108,32 @@ h1 {
   color: rgb(158, 158, 158);
 }
 
+.tryspan {
+  font-size: small;
+}
+
 .result {
+  flex-direction: start;
   background-color: rgb(170, 170, 170);
   padding: 1rem;
   border-radius: 1rem;
+  margin-bottom: 1rem;
 }
 
 .number {
   background-color: whitesmoke;
   border-radius: 1rem;
-  width: 16%;
+  width: 12%;
   margin: 0rem 1rem 0rem 1rem;
 }
 
 #strike, #ball {
   height: 2rem ;
+  justify-content: start;
 }
 
 .check {
+  width: 8rem;
   margin-left: 1rem;
 }
 
@@ -140,6 +152,6 @@ h1 {
   background-color: yellow;
 }
 
-/* .hidden {
+.hidden {
   display: none;
-} */
+}
