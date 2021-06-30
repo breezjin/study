@@ -2,6 +2,7 @@ console.log("hello, vanilla.");
 
 // 1. 게임 시작 버튼 만들기 [done]
 // 2. 게임 시작 버튼을 클릭 했을때, 랜덤한 세 자리 숫자 만들기 (사용자에게 보여주진 않습니다.)
+// 3. 숫자 입력칸 만들기 [done]
 
 const btnStart = document.querySelector('#btn-start');
 const source = [0,1,2,3,4,5,6,7,8,9]
@@ -16,13 +17,13 @@ function makeAnswer () {
     }
     console.log('랜덤 숫자 생성 : ' + answer); //검증용
 
+
     start.classList.add('hidden');
     game.classList.remove('hidden');
 };
-
 btnStart.addEventListener('click', makeAnswer);
 
-// 3. 숫자 입력칸 만들기 [done]
+
 const input = document.querySelector('#input-numbers');
 const btnCheck = document.querySelector('#btn-enter');
 const start = document.querySelector('#start');
@@ -93,22 +94,24 @@ input.addEventListener('keyup', function (e) {
     }
 });
 
+// 이하 결과영역 제어
+
 const success = document.querySelector('#success');
 const fail = document.querySelector('#fail');
 const answerResult = document.querySelector('#answer');
 const restart = document.querySelector('#btn-restart');
-
-function showFail() {
-    game.classList.add('hidden');
-    end.classList.remove('hidden');
-    fail.classList.remove('hidden');
-};
 
 function showSuccess() {
     game.classList.add('hidden');
     end.classList.remove('hidden');
     success.classList.remove('hidden');
     answerResult.innerHTML = answer;
+};
+
+function showFail() {
+    game.classList.add('hidden');
+    end.classList.remove('hidden');
+    fail.classList.remove('hidden');
 };
 
 function restartGame() {
