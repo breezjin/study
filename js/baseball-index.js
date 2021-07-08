@@ -71,7 +71,7 @@ function checkAnswer () {
         // *** 최근에 입력한 값이 바로바로 보이도록 구성
         if (userTry[2 - i] === answer[2 - i]) {
             strikeDot[30 - (checkAnswerCalled * 3) + (2 - i)].classList.remove('hidden')
-        } else if (answer.includes(userTry[2 - i])) {
+        } else if (userTry[2 - i] !== answer[2 - i] && answer.includes(userTry[2 - i])) {
             ballDot[30 - (checkAnswerCalled * 3) + (2 - i)].classList.remove('hidden')
         }
     }
@@ -114,13 +114,9 @@ function showFail() {
     fail.classList.remove('hidden');
 };
 
+// 10. 게임 재시작 버튼을 만들고, 재시작 할 수 있도록 합니다.
 function restartGame() {
     location.reload();
 };
 
 restart.addEventListener('click', restartGame);
-
-// 10. 게임 재시작 버튼을 만들고, 재시작 할 수 있도록 합니다.
-
-
-
